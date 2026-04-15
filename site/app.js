@@ -10,99 +10,123 @@
     { file: 'IMG_1066.jpeg',
       pro: 'Birthday Portrait — A distinguished celebration',
       chaos: 'It\'s MY birthday and I\'ll judge you if I want to',
-      turbo: 'THE BIRTHDAY BOY DEMANDS TRIBUTE. WHERE IS THE CAKE. WHY IS THERE A BALLOON AND NOT A STEAK.' },
+      turbo: 'THE BIRTHDAY BOY DEMANDS TRIBUTE. WHERE IS THE CAKE. WHY IS THERE A BALLOON AND NOT A STEAK.',
+      kisses: 'oh my god it\'s his birthday look at his little face with the balloon i\'m literally going to sob he\'s so perfect happy birthday my sweet stinky prince' },
     { file: 'IMG_1255.jpeg',
       pro: 'Cozy Couture — Wrapped in luxury',
       chaos: 'Blanket burrito mode: ACTIVATED',
-      turbo: 'I AM THE BURRITO. THE BURRITO IS ME. WE ARE ONE. DO NOT UNWRAP ME OR FACE THE CONSEQUENCES.' },
+      turbo: 'I AM THE BURRITO. THE BURRITO IS ME. WE ARE ONE. DO NOT UNWRAP ME OR FACE THE CONSEQUENCES.',
+      kisses: 'THE LITTLE BLANKET FACE oh no oh no he\'s peeking out like a tiny warm dumpling I cannot handle this level of cozy I need to hold him immediately' },
     { file: 'IMG_1260.jpeg',
       pro: 'Soft Focus — An intimate portrait',
       chaos: 'Those eyes have seen things. Mostly treats.',
-      turbo: 'STARING INTO YOUR SOUL AND FINDING IT LACKING... IN TREATS. GIVE TREATS NOW.' },
+      turbo: 'STARING INTO YOUR SOUL AND FINDING IT LACKING... IN TREATS. GIVE TREATS NOW.',
+      kisses: 'those big brown eyes... he\'s looking right into my heart and my heart is saying yes baby anything you want, the whole fridge is yours, take it all' },
     { file: 'IMG_1547.jpeg',
       pro: 'The Commute — Traveling in style',
       chaos: 'Asleep in the car like a grumpy old man',
-      turbo: 'DO NOT SPEAK TO ME. I AM RECHARGING MY CHAOS BATTERIES. ETA: UNKNOWN. SNORING: MAXIMUM.' },
+      turbo: 'DO NOT SPEAK TO ME. I AM RECHARGING MY CHAOS BATTERIES. ETA: UNKNOWN. SNORING: MAXIMUM.',
+      kisses: 'sleepy baby in his little car seat oh my heart he\'s doing the thing where his lips puff out when he sleeps and tiny snore bubbles come out shhhhh don\'t wake him' },
     { file: 'IMG_2463.jpeg',
       pro: 'Snack Time — Savoring the finer things',
       chaos: 'CHOMP. This is MY chew and I will END you.',
-      turbo: 'CONSUMING THE EVIDENCE. YOU SAW NOTHING. THIS CHEW HAD A FAMILY AND I DO NOT CARE.' },
+      turbo: 'CONSUMING THE EVIDENCE. YOU SAW NOTHING. THIS CHEW HAD A FAMILY AND I DO NOT CARE.',
+      kisses: 'look at him nomming his little chewy he\'s got the crazy eyes but they\'re LOVE crazy eyes and those little teefies I just want to kiss his whole entire face' },
     { file: 'IMG_2469.jpeg',
       pro: 'Golden Hour — A majestic beach portrait',
       chaos: 'Main character energy at the beach',
-      turbo: 'I AM THE GUARDIAN OF THIS BEACH. THE SAND BELONGS TO ME. THE SUNSET WAS COMMISSIONED IN MY HONOR.' },
+      turbo: 'I AM THE GUARDIAN OF THIS BEACH. THE SAND BELONGS TO ME. THE SUNSET WAS COMMISSIONED IN MY HONOR.',
+      kisses: 'beach baby!!! the sunset is literally bowing down to his beauty and honestly same, he\'s standing there like a little angel sent from heaven to bless this coastline' },
     { file: 'IMG_2974.jpeg',
       pro: 'Floral Elegance — A touch of pink',
       chaos: 'Yes I\'m wearing a flower hat. No I will not discuss it.',
-      turbo: 'THE FLOWER CROWN CHOSE ME. I DID NOT CHOOSE THIS LIFE. BUT I WILL ROCK IT HARDER THAN ANYONE HAS EVER ROCKED ANYTHING.' },
+      turbo: 'THE FLOWER CROWN CHOSE ME. I DID NOT CHOOSE THIS LIFE. BUT I WILL ROCK IT HARDER THAN ANYONE HAS EVER ROCKED ANYTHING.',
+      kisses: 'FLOWER BABY oh my god he has a little pink flower on his head and he looks so concerned but SO BEAUTIFUL it\'s giving confused renaissance painting energy and I am LIVING' },
     { file: 'IMG_3402.jpeg',
       pro: 'Pure Joy — A natural smile in the park',
       chaos: 'CHEESE!! Wait no— TREATS!!',
-      turbo: 'MAXIMUM HAPPINESS ACHIEVED. SEROTONIN LEVELS: OFF THE CHARTS. TONGUE STATUS: FULLY DEPLOYED.' },
+      turbo: 'MAXIMUM HAPPINESS ACHIEVED. SEROTONIN LEVELS: OFF THE CHARTS. TONGUE STATUS: FULLY DEPLOYED.',
+      kisses: 'THE SMILE!!! he\'s smiling at ME he\'s happy to see ME this is the best day of my entire life look at that little tongue poking out I would literally take a bullet for this dog' },
     { file: 'IMG_3454.JPG',
       pro: 'Low Angle — A commanding perspective',
       chaos: 'When you drop your phone and the front camera is on',
-      turbo: 'YOU DARE PHOTOGRAPH ME FROM BELOW?? I AM NOT YOUR CEILING FAN. I AM YOUR OVERLORD. BOW.' },
+      turbo: 'YOU DARE PHOTOGRAPH ME FROM BELOW?? I AM NOT YOUR CEILING FAN. I AM YOUR OVERLORD. BOW.',
+      kisses: 'he\'s looking down at me like a little gargoyle angel and I have never felt more loved or more judged at the same time and honestly? both feelings are amazing' },
     { file: 'IMG_3556.jpeg',
       pro: 'Contemplation — A thoughtful repose',
       chaos: 'Plotting world domination, one nap at a time',
-      turbo: 'THE PLAN IS SIMPLE: STEP 1 — STARE. STEP 2 — KEEP STARING. STEP 3 — THEY GIVE YOU WHATEVER YOU WANT. IT WORKS EVERY TIME.' },
+      turbo: 'THE PLAN IS SIMPLE: STEP 1 — STARE. STEP 2 — KEEP STARING. STEP 3 — THEY GIVE YOU WHATEVER YOU WANT. IT WORKS EVERY TIME.',
+      kisses: 'serious baby is having serious thoughts and every single one of those thoughts is perfect and valid even if they\'re just about dinner because same honestly same' },
     { file: 'IMG_3768.jpeg',
       pro: 'Holiday Spirit — Festive and refined',
       chaos: 'Wearing a scarf because I\'m FANCY',
-      turbo: 'THIS SCARF COST MORE THAN YOUR RENT. JUST KIDDING IT\'S FROM TARGET. BUT I MAKE IT LOOK GUCCI.' },
+      turbo: 'THIS SCARF COST MORE THAN YOUR RENT. JUST KIDDING IT\'S FROM TARGET. BUT I MAKE IT LOOK GUCCI.',
+      kisses: 'festive baby!!! the little scarf pom poms!!! he looks like a christmas card that would make you cry happy tears and then frame it and look at it every single day forever' },
     { file: 'IMG_3794.jpeg',
       pro: 'At Rest — Nestled in comfort',
       chaos: 'This is MY bed and you can\'t have it',
-      turbo: 'THE THRONE. THE PLUSH THRONE OF INFINITE COZINESS. PEASANTS SLEEP ON MATTRESSES. I SLEEP ON CLOUDS OF MY OWN SUPERIORITY.' },
+      turbo: 'THE THRONE. THE PLUSH THRONE OF INFINITE COZINESS. PEASANTS SLEEP ON MATTRESSES. I SLEEP ON CLOUDS OF MY OWN SUPERIORITY.',
+      kisses: 'tucked in his little bed like a tiny king of naptime and I want to crawl in there with him but he\'s so peaceful I\'ll just watch him breathe and cry quietly' },
     { file: 'IMG_3818.jpeg',
       pro: 'Autumn Collection — Sherpa-lined sophistication',
       chaos: 'Jacket game: STRONG. Attitude game: STRONGER.',
-      turbo: 'DRIP CHECK. SHERPA LINED. EYES THAT SAY "I KNOW I LOOK GOOD AND THERE\'S NOTHING YOU CAN DO ABOUT IT."' },
+      turbo: 'DRIP CHECK. SHERPA LINED. EYES THAT SAY "I KNOW I LOOK GOOD AND THERE\'S NOTHING YOU CAN DO ABOUT IT."',
+      kisses: 'he\'s wearing his little jacket!!! the sherpa lining!!! he looks so warm and so handsome and I want to zip myself into a matching one so we can be twinsies forever' },
     { file: 'IMG_4356.jpeg',
       pro: 'Sun-Kissed — Basking in natural light',
       chaos: 'Squinting at the sun like it personally offended me',
-      turbo: 'THE SUN EXISTS BECAUSE I ALLOW IT. I SQUINT NOT BECAUSE IT\'S BRIGHT BUT BECAUSE I\'M JUDGING IT.' },
+      turbo: 'THE SUN EXISTS BECAUSE I ALLOW IT. I SQUINT NOT BECAUSE IT\'S BRIGHT BUT BECAUSE I\'M JUDGING IT.',
+      kisses: 'sun-kissed baby doing his little squinty face and every wrinkle is perfect and I want to kiss each individual wrinkle and tell it that it\'s doing a great job' },
     { file: 'IMG_4425.jpeg',
       pro: 'Backyard Portrait — A candid moment of joy',
       chaos: 'HIIII!! HI!! Are those TREATS?! HI!!',
-      turbo: 'APPROACHING AT MAXIMUM SPEED. TAIL FREQUENCY: 9000 RPM. INCOMING FACE LICK IN 3... 2...' },
+      turbo: 'APPROACHING AT MAXIMUM SPEED. TAIL FREQUENCY: 9000 RPM. INCOMING FACE LICK IN 3... 2...',
+      kisses: 'HAPPY BOY!!! look at that smile he\'s so excited to exist and honestly that energy is infectious I\'m excited to exist too now because I exist in the same world as this face' },
     { file: 'IMG_4600.jpeg',
       pro: 'The Thinker — A moment of quiet reflection',
       chaos: 'Side-eye level: EXPERT',
-      turbo: 'I SEE WHAT YOU DID. I SEE EVERYTHING. NOTHING ESCAPES THESE EYES. I WILL REMEMBER THIS AT 3 AM.' },
+      turbo: 'I SEE WHAT YOU DID. I SEE EVERYTHING. NOTHING ESCAPES THESE EYES. I WILL REMEMBER THIS AT 3 AM.',
+      kisses: 'he\'s giving me the look. THE look. the one where he\'s silently judging me but also silently loving me and I don\'t know which one makes me more emotional' },
     { file: 'IMG_4639.jpeg',
       pro: 'Garden Gentleman — An afternoon in the yard',
       chaos: 'That ball is mine. Everything is mine.',
-      turbo: 'THE RED BALL FEARS ME. AS IT SHOULD. I HAVE DESTROYED 47 TOYS THIS YEAR AND I WILL NOT STOP UNTIL THE TOY INDUSTRY TREMBLES.' },
+      turbo: 'THE RED BALL FEARS ME. AS IT SHOULD. I HAVE DESTROYED 47 TOYS THIS YEAR AND I WILL NOT STOP UNTIL THE TOY INDUSTRY TREMBLES.',
+      kisses: 'garden baby with his ball!!! he\'s so proud of that ball and I\'m so proud of him and we\'re all just proud of each other standing in the grass being a happy little family' },
     { file: 'IMG_4723.jpeg',
       pro: 'Sidewalk Portrait — Urban charm',
       chaos: 'Underbite and PROUD of it',
-      turbo: 'TEEFIES: OUT. UNDERBITE: LEGENDARY. PHOTOGRAPHER: BLESSED TO WITNESS THIS. YOU\'RE WELCOME.' },
+      turbo: 'TEEFIES: OUT. UNDERBITE: LEGENDARY. PHOTOGRAPHER: BLESSED TO WITNESS THIS. YOU\'RE WELCOME.',
+      kisses: 'the little underbite teefies poking out I can\'t I literally cannot this is the cutest thing that has ever happened on any sidewalk in the history of sidewalks' },
     { file: 'IMG_4724.jpeg',
       pro: 'The Smile — Radiant and warm',
       chaos: 'When someone says "walk" and means it',
-      turbo: 'THIS IS WHAT PURE UNBRIDLED JOY LOOKS LIKE. SCIENTISTS HAVE STUDIED THIS FACE. THEY WEPT.' },
+      turbo: 'THIS IS WHAT PURE UNBRIDLED JOY LOOKS LIKE. SCIENTISTS HAVE STUDIED THIS FACE. THEY WEPT.',
+      kisses: 'THAT SMILE AGAIN oh no it\'s even bigger this time my heart is actually exploding into a million tiny heart-shaped pieces and each piece also loves this dog' },
     { file: 'IMG_4761.jpeg',
       pro: 'Garden Stroll — Exploring the grounds',
       chaos: 'Ears UP, attitude ON, let\'s GO',
-      turbo: 'PATROL IN PROGRESS. PERIMETER: SECURE. SQUIRRELS: DETECTED. ENGAGING PURSUIT MODE IN T-MINUS NOW.' },
+      turbo: 'PATROL IN PROGRESS. PERIMETER: SECURE. SQUIRRELS: DETECTED. ENGAGING PURSUIT MODE IN T-MINUS NOW.',
+      kisses: 'adventure baby!!! ears up, tail probably wagging, little legs doing their little trot thing and I want to follow him literally anywhere he wants to go forever' },
     { file: 'IMG_4764.jpeg',
       pro: 'Upward Gaze — Nobility personified',
       chaos: 'Looking at you like you owe me treats',
-      turbo: 'LOOKING UP AT GOD AND ASKING WHY THE TREAT BAG IS EMPTY. ANSWERS: NONE. DISAPPOINTMENT: INFINITE.' },
+      turbo: 'LOOKING UP AT GOD AND ASKING WHY THE TREAT BAG IS EMPTY. ANSWERS: NONE. DISAPPOINTMENT: INFINITE.',
+      kisses: 'he\'s looking up at me with those eyes and I am simply not going to survive this moment, tell my family I loved them but I loved this dog more, goodbye cruel beautiful world' },
     { file: 'IMG_5236.jpeg',
       pro: 'City Walk — A dapper outing in blue',
       chaos: 'Blue harness, blue steel, BLUE EVERYTHING',
-      turbo: 'HARNESS: EQUIPPED. LOCATION: PUBLIC. MISSION: RECEIVE COMPLIMENTS FROM EVERY HUMAN IN A 50-FOOT RADIUS. STATUS: SUCCEEDING.' },
+      turbo: 'HARNESS: EQUIPPED. LOCATION: PUBLIC. MISSION: RECEIVE COMPLIMENTS FROM EVERY HUMAN IN A 50-FOOT RADIUS. STATUS: SUCCEEDING.',
+      kisses: 'little man in his blue harness looking like the most handsome boy at the park and in the city and in the state and in the country and on the planet and in the galaxy' },
     { file: 'IMG_5595.jpeg',
       pro: 'In the Tall Grass — A pastoral portrait',
       chaos: 'Grass level: 100. Stealth mode: ON.',
-      turbo: 'I AM THE GRASS. THE GRASS IS ME. YOU CANNOT FIND ME. EXCEPT YOU CAN BECAUSE I\'M SNORING.' },
+      turbo: 'I AM THE GRASS. THE GRASS IS ME. YOU CANNOT FIND ME. EXCEPT YOU CAN BECAUSE I\'M SNORING.',
+      kisses: 'grass baby!!! he\'s hiding in the tall grass like a little jungle explorer and his ears are poking up and I want to find him and give him ten thousand kisses on his head' },
     { file: 'IMG_6677.jpeg',
       pro: 'Garden Portrait — A natural beauty',
       chaos: 'Tongue out, vibes immaculate',
-      turbo: 'TONGUE: FULLY EXTENDED. VIBES: TRANSCENDENT. THIS PHOTO CURES SADNESS. SCIENCE SAID SO. PROBABLY.' },
+      turbo: 'TONGUE: FULLY EXTENDED. VIBES: TRANSCENDENT. THIS PHOTO CURES SADNESS. SCIENCE SAID SO. PROBABLY.',
+      kisses: 'tongue out, heart full, can\'t lose. this is the face that makes everything okay. bad day? look at leo. good day? look at leo. any day? LOOK AT LEO. i love him so much it hurts' },
   ];
 
   // ─── Personality Mode ──────────────────────────────────────────────────────
@@ -117,11 +141,16 @@
     modeBtns.forEach(function (btn) {
       btn.classList.toggle('active', btn.dataset.mode === mode);
     });
-    // Turbo confetti
+    // Turbo confetti / Kisses hearts
     if (mode === 'turbo') {
       startConfetti();
+      stopHearts();
+    } else if (mode === 'kisses') {
+      stopConfetti();
+      startHearts();
     } else {
       stopConfetti();
+      stopHearts();
     }
   }
 
@@ -163,6 +192,44 @@
     }
   }
 
+  // ─── Kisses Hearts ─────────────────────────────────────────────────────────
+
+  var heartsInterval = null;
+
+  function createHeart() {
+    var heart = document.createElement('div');
+    var size = 16 + Math.random() * 28;
+    var startX = Math.random() * 100;
+    var drift = (Math.random() - 0.5) * 100;
+    var duration = 4 + Math.random() * 4;
+    var delay = Math.random() * 0.5;
+    var hearts = ['\u2764\uFE0F', '\uD83D\uDC97', '\uD83D\uDC96', '\uD83D\uDC95', '\uD83D\uDC9E', '\uD83D\uDC9C', '\uD83D\uDC8B', '\uD83D\uDC9D', '\u2763\uFE0F', '\uD83D\uDC93'];
+    heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+    heart.style.cssText = 'position:fixed;z-index:9999;pointer-events:none;font-size:' + size +
+      'px;left:' + startX + 'vw;bottom:-40px;opacity:0;animation:kisses-rise ' + duration +
+      's ease-out ' + delay + 's forwards;';
+    document.body.appendChild(heart);
+    setTimeout(function () { heart.remove(); }, (duration + delay) * 1000 + 500);
+  }
+
+  function startHearts() {
+    if (heartsInterval) return;
+    if (!document.getElementById('kisses-hearts-style')) {
+      var style = document.createElement('style');
+      style.id = 'kisses-hearts-style';
+      style.textContent = '@keyframes kisses-rise{0%{bottom:-40px;opacity:0;transform:translateX(0) rotate(0deg) scale(0.5)}10%{opacity:1;transform:scale(1)}90%{opacity:0.8}100%{bottom:110vh;opacity:0;transform:translateX(' + ((Math.random()-0.5)*80) + 'px) rotate(' + (Math.random()*60-30) + 'deg) scale(0.3)}}';
+      document.head.appendChild(style);
+    }
+    heartsInterval = setInterval(createHeart, 300);
+  }
+
+  function stopHearts() {
+    if (heartsInterval) {
+      clearInterval(heartsInterval);
+      heartsInterval = null;
+    }
+  }
+
   // Restore saved mode on load (default: 'professional')
   var savedMode = localStorage.getItem('leo-mode') || 'professional';
   setMode(savedMode);
@@ -176,6 +243,7 @@
   function getCaption(photo) {
     var mode = htmlEl.getAttribute('data-mode');
     if (mode === 'turbo') return photo.turbo;
+    if (mode === 'kisses') return photo.kisses;
     if (mode === 'unhinged') return photo.chaos;
     return photo.pro;
   }

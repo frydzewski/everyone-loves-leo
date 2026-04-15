@@ -327,6 +327,224 @@ button {
   background: linear-gradient(#ff0000, #ff00ff, #0000ff, #00ffff, #00ff00, #ffff00);
 }
 
+/* ── CSS Custom Properties — Kisses Mode ─────────────────── */
+[data-mode="kisses"] {
+  --bg:               #fff0f5;
+  --bg-secondary:     #ffe4ef;
+  --text:             #8b2252;
+  --text-muted:       #d4789c;
+  --accent:           #ff69b4;
+  --accent-secondary: #ff1493;
+  --heading-font:     'Georgia', 'Palatino', serif;
+  --body-font:        'Georgia', 'Palatino', serif;
+  --nav-bg:           rgba(255, 240, 245, 0.95);
+  --card-bg:          #fff;
+  --card-border:      #ffb6c1;
+  --shadow:           0 4px 20px rgba(255, 105, 180, 0.25);
+  --radius:           20px;
+  --nav-link-hover:   #ff1493;
+  --hero-overlay:     rgba(255, 240, 245, 0.3);
+  --input-bg:         #fff;
+  --input-border:     #ffb6c1;
+  --cream:            #ff69b4;
+}
+
+[data-mode="kisses"] body {
+  background: #fff0f5;
+  color: #8b2252;
+}
+
+/* Kisses button */
+.mode-btn-kisses {
+  position: relative;
+}
+[data-mode="kisses"] .mode-btn-kisses {
+  background: linear-gradient(135deg, #ff69b4, #ff1493, #ff69b4);
+  color: #fff;
+  border-color: #ff69b4;
+  animation: kisses-btn-glow 2s ease infinite alternate;
+}
+@keyframes kisses-btn-glow {
+  0% { box-shadow: 0 0 8px rgba(255,105,180,0.5); }
+  100% { box-shadow: 0 0 20px rgba(255,105,180,0.8), 0 0 40px rgba(255,20,147,0.3); }
+}
+
+/* Kisses hero */
+[data-mode="kisses"] #hero {
+  background: linear-gradient(135deg, #fff0f5, #ffe4ef, #ffd1e8, #ffe4ef, #fff0f5) !important;
+  background-size: 400% 400% !important;
+  animation: kisses-bg-drift 8s ease infinite;
+}
+@keyframes kisses-bg-drift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Kisses heading — big swoopy lovey text */
+[data-mode="kisses"] .hero-heading {
+  font-size: clamp(3rem, 10vw, 8rem) !important;
+  color: #ff1493 !important;
+  font-style: italic;
+  text-shadow: 2px 2px 0 rgba(255,182,193,0.6);
+  animation: kisses-float 3s ease-in-out infinite;
+  letter-spacing: 0.05em;
+}
+@keyframes kisses-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Kisses tagline */
+[data-mode="kisses"] .hero-tagline {
+  font-style: italic;
+  color: #d4789c !important;
+  font-size: 1.1rem !important;
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Kisses quote */
+[data-mode="kisses"] .hero-quote {
+  background: rgba(255,182,193,0.2) !important;
+  border: 1px solid #ffb6c1 !important;
+  color: #8b2252 !important;
+  font-style: italic;
+  border-radius: 20px !important;
+}
+
+/* Kisses nav */
+[data-mode="kisses"] #main-nav {
+  background: rgba(255, 240, 245, 0.95) !important;
+  border-bottom: 2px solid #ffb6c1 !important;
+  backdrop-filter: blur(12px);
+}
+[data-mode="kisses"] .nav-logo {
+  color: #ff1493 !important;
+  font-style: italic;
+}
+[data-mode="kisses"] .nav-links a {
+  color: #d4789c !important;
+}
+[data-mode="kisses"] .nav-links a:hover {
+  color: #ff1493 !important;
+  transform: scale(1.05);
+}
+
+/* Kisses section headings */
+[data-mode="kisses"] .section-heading {
+  color: #ff1493 !important;
+  font-style: italic;
+  font-size: 2.5rem !important;
+  animation: kisses-float 4s ease-in-out infinite;
+}
+[data-mode="kisses"] .section-subtitle {
+  color: #d4789c !important;
+  font-style: italic;
+  line-height: 1.8;
+}
+
+/* Kisses gallery — soft, round, glowy */
+[data-mode="kisses"] #gallery,
+[data-mode="kisses"] #pet-wall {
+  background: #fff0f5;
+}
+
+[data-mode="kisses"] .gallery-item {
+  border-radius: 20px;
+  border: 3px solid #ffb6c1;
+  box-shadow: 0 4px 15px rgba(255,105,180,0.2);
+  transition: all 0.4s ease;
+}
+[data-mode="kisses"] .gallery-item:hover {
+  transform: scale(1.05);
+  border-color: #ff69b4;
+  box-shadow: 0 8px 30px rgba(255,105,180,0.4), 0 0 60px rgba(255,182,193,0.3);
+  z-index: 2;
+}
+
+/* Kisses button */
+[data-mode="kisses"] .btn-primary,
+[data-mode="kisses"] #add-pet-btn {
+  background: linear-gradient(135deg, #ff69b4, #ff1493) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 30px !important;
+  padding: 14px 36px !important;
+  font-style: italic;
+  font-size: 1.05rem !important;
+  box-shadow: 0 4px 15px rgba(255,105,180,0.4);
+}
+[data-mode="kisses"] .btn-primary:hover,
+[data-mode="kisses"] #add-pet-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 30px rgba(255,105,180,0.5);
+}
+
+/* Kisses pet cards */
+[data-mode="kisses"] .pet-card {
+  border-radius: 20px;
+  border: 3px solid #ffb6c1;
+  box-shadow: 0 4px 15px rgba(255,105,180,0.15);
+}
+[data-mode="kisses"] .pet-card-name {
+  background: linear-gradient(transparent, rgba(255,105,180,0.85)) !important;
+  font-style: italic;
+}
+
+/* Kisses footer */
+[data-mode="kisses"] #site-footer {
+  background: #fff0f5;
+  color: #d4789c;
+  font-style: italic;
+}
+
+/* Kisses modal */
+[data-mode="kisses"] .modal-box {
+  background: #fff0f5 !important;
+  border: 2px solid #ffb6c1 !important;
+  border-radius: 24px !important;
+  box-shadow: 0 8px 40px rgba(255,105,180,0.2);
+}
+[data-mode="kisses"] .modal-box h2 {
+  color: #ff1493 !important;
+  font-style: italic;
+}
+[data-mode="kisses"] .form-group label,
+[data-mode="kisses"] .modal-box label {
+  color: #d4789c !important;
+  font-style: italic;
+}
+[data-mode="kisses"] .form-group input,
+[data-mode="kisses"] .modal-box input[type="text"] {
+  border-color: #ffb6c1 !important;
+  border-radius: 12px !important;
+}
+
+/* Kisses lightbox */
+[data-mode="kisses"] .lightbox-arrow {
+  background: rgba(255,105,180,0.2);
+  border-color: #ffb6c1;
+  color: #ff1493;
+}
+[data-mode="kisses"] .lightbox-arrow:hover {
+  background: rgba(255,105,180,0.4);
+  box-shadow: 0 0 20px rgba(255,105,180,0.4);
+}
+[data-mode="kisses"] #lightbox-caption {
+  font-style: italic;
+  color: #ffb6c1;
+}
+
+/* Kisses scrollbar */
+[data-mode="kisses"] ::-webkit-scrollbar-thumb {
+  background: linear-gradient(#ffb6c1, #ff69b4, #ff1493);
+  border-radius: 10px;
+}
+[data-mode="kisses"] ::-webkit-scrollbar-track {
+  background: #fff0f5;
+}
+
 /* ── Global Body ──────────────────────────────────────────── */
 body {
   background-color: var(--bg);
@@ -345,10 +563,16 @@ body {
 /* ── Toggle Visibility Pattern ───────────────────────────── */
 [data-mode="professional"] .chaos-text { display: none; }
 [data-mode="professional"] .turbo-text { display: none; }
+[data-mode="professional"] .kisses-text { display: none; }
 [data-mode="unhinged"]     .pro-text   { display: none; }
 [data-mode="unhinged"]     .turbo-text { display: none; }
+[data-mode="unhinged"]     .kisses-text { display: none; }
 [data-mode="turbo"]        .pro-text   { display: none; }
 [data-mode="turbo"]        .chaos-text { display: none; }
+[data-mode="turbo"]        .kisses-text { display: none; }
+[data-mode="kisses"]       .pro-text   { display: none; }
+[data-mode="kisses"]       .chaos-text { display: none; }
+[data-mode="kisses"]       .turbo-text { display: none; }
 
 /* ── Mode Buttons ────────────────────────────────────────── */
 .mode-btn {
@@ -373,6 +597,27 @@ body {
 .mode-btn:hover:not(.active) {
   border-color: var(--accent);
   color: var(--accent);
+}
+/* Ensure buttons are readable in all modes */
+[data-mode="kisses"] .mode-btn:not(.active) {
+  border-color: #d4789c;
+  color: #8b2252;
+}
+[data-mode="kisses"] .mode-btn:hover:not(.active) {
+  border-color: #ff1493;
+  color: #ff1493;
+}
+[data-mode="unhinged"] .mode-btn:not(.active) {
+  color: #ffe600;
+  border-color: rgba(255,230,0,0.4);
+}
+[data-mode="professional"] .mode-btn:not(.active) {
+  color: #e8e0d0;
+  border-color: rgba(212,168,83,0.3);
+}
+[data-mode="turbo"] .mode-btn:not(.active) {
+  color: #fff;
+  border-color: rgba(255,255,255,0.3);
 }
 .mode-btn-turbo {
   position: relative;
