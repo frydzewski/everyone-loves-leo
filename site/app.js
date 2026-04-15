@@ -6,13 +6,103 @@
   const API_URL = 'https://ry8f7fo7d5.execute-api.us-east-1.amazonaws.com/prod/';
   const CDN_BASE = 'https://d4cc9faf2xny6.cloudfront.net';
 
-  const LEO_PHOTOS = [
-    'IMG_1066.jpeg', 'IMG_1255.jpeg', 'IMG_1260.jpeg', 'IMG_1547.jpeg',
-    'IMG_2463.jpeg', 'IMG_2469.jpeg', 'IMG_2974.jpeg', 'IMG_3402.jpeg',
-    'IMG_3454.JPG',  'IMG_3556.jpeg', 'IMG_3768.jpeg', 'IMG_3794.jpeg',
-    'IMG_3818.jpeg', 'IMG_4356.jpeg', 'IMG_4425.jpeg', 'IMG_4600.jpeg',
-    'IMG_4639.jpeg', 'IMG_4723.jpeg', 'IMG_4724.jpeg', 'IMG_4761.jpeg',
-    'IMG_4764.jpeg', 'IMG_5236.jpeg', 'IMG_5595.jpeg', 'IMG_6677.jpeg'
+  var LEO_PHOTOS = [
+    { file: 'IMG_1066.jpeg',
+      pro: 'Birthday Portrait — A distinguished celebration',
+      chaos: 'It\'s MY birthday and I\'ll judge you if I want to',
+      turbo: 'THE BIRTHDAY BOY DEMANDS TRIBUTE. WHERE IS THE CAKE. WHY IS THERE A BALLOON AND NOT A STEAK.' },
+    { file: 'IMG_1255.jpeg',
+      pro: 'Cozy Couture — Wrapped in luxury',
+      chaos: 'Blanket burrito mode: ACTIVATED',
+      turbo: 'I AM THE BURRITO. THE BURRITO IS ME. WE ARE ONE. DO NOT UNWRAP ME OR FACE THE CONSEQUENCES.' },
+    { file: 'IMG_1260.jpeg',
+      pro: 'Soft Focus — An intimate portrait',
+      chaos: 'Those eyes have seen things. Mostly treats.',
+      turbo: 'STARING INTO YOUR SOUL AND FINDING IT LACKING... IN TREATS. GIVE TREATS NOW.' },
+    { file: 'IMG_1547.jpeg',
+      pro: 'The Commute — Traveling in style',
+      chaos: 'Asleep in the car like a grumpy old man',
+      turbo: 'DO NOT SPEAK TO ME. I AM RECHARGING MY CHAOS BATTERIES. ETA: UNKNOWN. SNORING: MAXIMUM.' },
+    { file: 'IMG_2463.jpeg',
+      pro: 'Snack Time — Savoring the finer things',
+      chaos: 'CHOMP. This is MY chew and I will END you.',
+      turbo: 'CONSUMING THE EVIDENCE. YOU SAW NOTHING. THIS CHEW HAD A FAMILY AND I DO NOT CARE.' },
+    { file: 'IMG_2469.jpeg',
+      pro: 'Golden Hour — A majestic beach portrait',
+      chaos: 'Main character energy at the beach',
+      turbo: 'I AM THE GUARDIAN OF THIS BEACH. THE SAND BELONGS TO ME. THE SUNSET WAS COMMISSIONED IN MY HONOR.' },
+    { file: 'IMG_2974.jpeg',
+      pro: 'Floral Elegance — A touch of pink',
+      chaos: 'Yes I\'m wearing a flower hat. No I will not discuss it.',
+      turbo: 'THE FLOWER CROWN CHOSE ME. I DID NOT CHOOSE THIS LIFE. BUT I WILL ROCK IT HARDER THAN ANYONE HAS EVER ROCKED ANYTHING.' },
+    { file: 'IMG_3402.jpeg',
+      pro: 'Pure Joy — A natural smile in the park',
+      chaos: 'CHEESE!! Wait no— TREATS!!',
+      turbo: 'MAXIMUM HAPPINESS ACHIEVED. SEROTONIN LEVELS: OFF THE CHARTS. TONGUE STATUS: FULLY DEPLOYED.' },
+    { file: 'IMG_3454.JPG',
+      pro: 'Low Angle — A commanding perspective',
+      chaos: 'When you drop your phone and the front camera is on',
+      turbo: 'YOU DARE PHOTOGRAPH ME FROM BELOW?? I AM NOT YOUR CEILING FAN. I AM YOUR OVERLORD. BOW.' },
+    { file: 'IMG_3556.jpeg',
+      pro: 'Contemplation — A thoughtful repose',
+      chaos: 'Plotting world domination, one nap at a time',
+      turbo: 'THE PLAN IS SIMPLE: STEP 1 — STARE. STEP 2 — KEEP STARING. STEP 3 — THEY GIVE YOU WHATEVER YOU WANT. IT WORKS EVERY TIME.' },
+    { file: 'IMG_3768.jpeg',
+      pro: 'Holiday Spirit — Festive and refined',
+      chaos: 'Wearing a scarf because I\'m FANCY',
+      turbo: 'THIS SCARF COST MORE THAN YOUR RENT. JUST KIDDING IT\'S FROM TARGET. BUT I MAKE IT LOOK GUCCI.' },
+    { file: 'IMG_3794.jpeg',
+      pro: 'At Rest — Nestled in comfort',
+      chaos: 'This is MY bed and you can\'t have it',
+      turbo: 'THE THRONE. THE PLUSH THRONE OF INFINITE COZINESS. PEASANTS SLEEP ON MATTRESSES. I SLEEP ON CLOUDS OF MY OWN SUPERIORITY.' },
+    { file: 'IMG_3818.jpeg',
+      pro: 'Autumn Collection — Sherpa-lined sophistication',
+      chaos: 'Jacket game: STRONG. Attitude game: STRONGER.',
+      turbo: 'DRIP CHECK. SHERPA LINED. EYES THAT SAY "I KNOW I LOOK GOOD AND THERE\'S NOTHING YOU CAN DO ABOUT IT."' },
+    { file: 'IMG_4356.jpeg',
+      pro: 'Sun-Kissed — Basking in natural light',
+      chaos: 'Squinting at the sun like it personally offended me',
+      turbo: 'THE SUN EXISTS BECAUSE I ALLOW IT. I SQUINT NOT BECAUSE IT\'S BRIGHT BUT BECAUSE I\'M JUDGING IT.' },
+    { file: 'IMG_4425.jpeg',
+      pro: 'Backyard Portrait — A candid moment of joy',
+      chaos: 'HIIII!! HI!! Are those TREATS?! HI!!',
+      turbo: 'APPROACHING AT MAXIMUM SPEED. TAIL FREQUENCY: 9000 RPM. INCOMING FACE LICK IN 3... 2...' },
+    { file: 'IMG_4600.jpeg',
+      pro: 'The Thinker — A moment of quiet reflection',
+      chaos: 'Side-eye level: EXPERT',
+      turbo: 'I SEE WHAT YOU DID. I SEE EVERYTHING. NOTHING ESCAPES THESE EYES. I WILL REMEMBER THIS AT 3 AM.' },
+    { file: 'IMG_4639.jpeg',
+      pro: 'Garden Gentleman — An afternoon in the yard',
+      chaos: 'That ball is mine. Everything is mine.',
+      turbo: 'THE RED BALL FEARS ME. AS IT SHOULD. I HAVE DESTROYED 47 TOYS THIS YEAR AND I WILL NOT STOP UNTIL THE TOY INDUSTRY TREMBLES.' },
+    { file: 'IMG_4723.jpeg',
+      pro: 'Sidewalk Portrait — Urban charm',
+      chaos: 'Underbite and PROUD of it',
+      turbo: 'TEEFIES: OUT. UNDERBITE: LEGENDARY. PHOTOGRAPHER: BLESSED TO WITNESS THIS. YOU\'RE WELCOME.' },
+    { file: 'IMG_4724.jpeg',
+      pro: 'The Smile — Radiant and warm',
+      chaos: 'When someone says "walk" and means it',
+      turbo: 'THIS IS WHAT PURE UNBRIDLED JOY LOOKS LIKE. SCIENTISTS HAVE STUDIED THIS FACE. THEY WEPT.' },
+    { file: 'IMG_4761.jpeg',
+      pro: 'Garden Stroll — Exploring the grounds',
+      chaos: 'Ears UP, attitude ON, let\'s GO',
+      turbo: 'PATROL IN PROGRESS. PERIMETER: SECURE. SQUIRRELS: DETECTED. ENGAGING PURSUIT MODE IN T-MINUS NOW.' },
+    { file: 'IMG_4764.jpeg',
+      pro: 'Upward Gaze — Nobility personified',
+      chaos: 'Looking at you like you owe me treats',
+      turbo: 'LOOKING UP AT GOD AND ASKING WHY THE TREAT BAG IS EMPTY. ANSWERS: NONE. DISAPPOINTMENT: INFINITE.' },
+    { file: 'IMG_5236.jpeg',
+      pro: 'City Walk — A dapper outing in blue',
+      chaos: 'Blue harness, blue steel, BLUE EVERYTHING',
+      turbo: 'HARNESS: EQUIPPED. LOCATION: PUBLIC. MISSION: RECEIVE COMPLIMENTS FROM EVERY HUMAN IN A 50-FOOT RADIUS. STATUS: SUCCEEDING.' },
+    { file: 'IMG_5595.jpeg',
+      pro: 'In the Tall Grass — A pastoral portrait',
+      chaos: 'Grass level: 100. Stealth mode: ON.',
+      turbo: 'I AM THE GRASS. THE GRASS IS ME. YOU CANNOT FIND ME. EXCEPT YOU CAN BECAUSE I\'M SNORING.' },
+    { file: 'IMG_6677.jpeg',
+      pro: 'Garden Portrait — A natural beauty',
+      chaos: 'Tongue out, vibes immaculate',
+      turbo: 'TONGUE: FULLY EXTENDED. VIBES: TRANSCENDENT. THIS PHOTO CURES SADNESS. SCIENCE SAID SO. PROBABLY.' },
   ];
 
   // ─── Personality Mode ──────────────────────────────────────────────────────
@@ -83,17 +173,25 @@
     return CDN_BASE ? CDN_BASE + '/leo/' + filename : 'leo/' + filename;
   }
 
+  function getCaption(photo) {
+    var mode = htmlEl.getAttribute('data-mode');
+    if (mode === 'turbo') return photo.turbo;
+    if (mode === 'unhinged') return photo.chaos;
+    return photo.pro;
+  }
+
   function renderGallery() {
-    const grid = document.getElementById('gallery-grid');
+    var grid = document.getElementById('gallery-grid');
     if (!grid) return;
     grid.innerHTML = '';
 
-    LEO_PHOTOS.forEach(function (filename) {
-      const item = document.createElement('div');
+    LEO_PHOTOS.forEach(function (photo, index) {
+      var item = document.createElement('div');
       item.className = 'gallery-item';
+      item.dataset.photoIndex = index;
 
-      const img = document.createElement('img');
-      img.src = getPhotoUrl(filename);
+      var img = document.createElement('img');
+      img.src = getPhotoUrl(photo.file);
       img.alt = 'Leo the French Bulldog';
       img.loading = 'lazy';
 
@@ -151,11 +249,12 @@
 
   // Gallery click delegation
   document.getElementById('gallery-grid').addEventListener('click', function (e) {
-    const item = e.target.closest('.gallery-item');
+    var item = e.target.closest('.gallery-item');
     if (!item) return;
-    const img = item.querySelector('img');
-    if (img) {
-      openLightbox(img.src, img.alt);
+    var img = item.querySelector('img');
+    var index = parseInt(item.dataset.photoIndex, 10);
+    if (img && !isNaN(index)) {
+      openLightbox(img.src, getCaption(LEO_PHOTOS[index]));
     }
   });
 
