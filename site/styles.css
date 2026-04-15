@@ -599,7 +599,8 @@ body {
 }
 
 /* ── Gallery Grid ─────────────────────────────────────────── */
-.gallery-grid {
+.gallery-grid,
+#gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 12px;
@@ -675,7 +676,8 @@ body {
 }
 
 /* ── Pet Wall Grid ────────────────────────────────────────── */
-.pet-wall-grid {
+.pet-wall-grid,
+#pet-wall-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 20px;
@@ -1674,7 +1676,9 @@ p, a, span {
   }
 
   .gallery-grid,
-  .pet-wall-grid {
+  #gallery-grid,
+  .pet-wall-grid,
+  #pet-wall-grid {
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   }
 }
@@ -1723,7 +1727,9 @@ p, a, span {
   }
 
   .gallery-grid,
-  .pet-wall-grid {
+  #gallery-grid,
+  .pet-wall-grid,
+  #pet-wall-grid {
     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     gap: 8px;
   }
@@ -1754,7 +1760,9 @@ p, a, span {
 
 @media (max-width: 480px) {
   .gallery-grid,
-  .pet-wall-grid {
+  #gallery-grid,
+  .pet-wall-grid,
+  #pet-wall-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 6px;
   }
