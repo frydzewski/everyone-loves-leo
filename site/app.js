@@ -15,23 +15,66 @@
     'IMG_4764.jpeg', 'IMG_5236.jpeg', 'IMG_5595.jpeg', 'IMG_6677.jpeg'
   ];
 
-  // ─── Personality Toggle ────────────────────────────────────────────────────
+  // ─── Personality Mode ──────────────────────────────────────────────────────
 
-  const modeToggle = document.getElementById('mode-toggle');
   const htmlEl = document.documentElement;
+  const modeBtns = document.querySelectorAll('.mode-btn');
+  var confettiInterval = null;
 
   function setMode(mode) {
     htmlEl.setAttribute('data-mode', mode);
     localStorage.setItem('leo-mode', mode);
-    modeToggle.checked = (mode === 'unhinged');
+    modeBtns.forEach(function (btn) {
+      btn.classList.toggle('active', btn.dataset.mode === mode);
+    });
+    // Turbo confetti
+    if (mode === 'turbo') {
+      startConfetti();
+    } else {
+      stopConfetti();
+    }
   }
 
-  modeToggle.addEventListener('change', function () {
-    setMode(this.checked ? 'unhinged' : 'professional');
+  modeBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      setMode(this.dataset.mode);
+    });
   });
 
+  // ─── Turbo Confetti ───────────────────────────────────────────────────────
+
+  function createConfettiPiece() {
+    var piece = document.createElement('div');
+    piece.style.cssText = 'position:fixed;z-index:9999;pointer-events:none;font-size:' +
+      (12 + Math.random() * 20) + 'px;left:' + (Math.random() * 100) + 'vw;top:-30px;' +
+      'animation:turbo-fall ' + (2 + Math.random() * 3) + 's linear forwards;';
+    var emojis = ['🐾', '🦴', '💀', '🔥', '⚡', '💥', '🌈', '✨', '🐶', '👑', '💎', '🚀'];
+    piece.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    document.body.appendChild(piece);
+    setTimeout(function () { piece.remove(); }, 5000);
+  }
+
+  function startConfetti() {
+    if (confettiInterval) return;
+    // Inject the fall animation if not already present
+    if (!document.getElementById('turbo-confetti-style')) {
+      var style = document.createElement('style');
+      style.id = 'turbo-confetti-style';
+      style.textContent = '@keyframes turbo-fall{0%{top:-30px;opacity:1;transform:rotate(0deg)}100%{top:110vh;opacity:0;transform:rotate(720deg)}}';
+      document.head.appendChild(style);
+    }
+    confettiInterval = setInterval(createConfettiPiece, 200);
+  }
+
+  function stopConfetti() {
+    if (confettiInterval) {
+      clearInterval(confettiInterval);
+      confettiInterval = null;
+    }
+  }
+
   // Restore saved mode on load (default: 'professional')
-  const savedMode = localStorage.getItem('leo-mode') || 'professional';
+  var savedMode = localStorage.getItem('leo-mode') || 'professional';
   setMode(savedMode);
 
   // ─── Gallery ───────────────────────────────────────────────────────────────

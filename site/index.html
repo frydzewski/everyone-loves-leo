@@ -20,12 +20,15 @@
       <li><a href="#pet-wall">Pet Wall</a></li>
     </ul>
     <div class="personality-toggle">
-      <span class="toggle-label pro-text">Professional</span>
-      <span class="toggle-label chaos-text">Unhinged</span>
-      <label class="toggle-switch" aria-label="Toggle personality mode">
-        <input type="checkbox" id="mode-toggle">
-        <span class="toggle-slider"></span>
-      </label>
+      <button class="mode-btn active" data-mode="professional" id="btn-pro">
+        <span class="mode-btn-label">Professional</span>
+      </button>
+      <button class="mode-btn" data-mode="unhinged" id="btn-unhinged">
+        <span class="mode-btn-label">Unhinged</span>
+      </button>
+      <button class="mode-btn mode-btn-turbo" data-mode="turbo" id="btn-turbo">
+        <span class="mode-btn-label">TURBO</span>
+      </button>
     </div>
   </nav>
 
@@ -35,14 +38,17 @@
       <h1 class="hero-heading">
         <span class="pro-text">Leo</span>
         <span class="chaos-text">LEO THE MAGNIFICENT</span>
+        <span class="turbo-text">L̸̨̛E̵̡O̷̧ THE ABSOLUTE UNIT</span>
       </h1>
       <p class="hero-tagline">
         <span class="pro-text">French Bulldog | Fashion Icon | Distinguished Gentleman</span>
         <span class="chaos-text">17 lbs of DRAMA | Ears That Pick Up Satellite TV | A Face Only an Uncle Could Love (and he does)</span>
+        <span class="turbo-text">17 lbs of PURE UNFILTERED CHAOS | SATELLITE DISH EARS | WILL STARE INTO YOUR SOUL UNTIL YOU GIVE HIM TREATS | NOT SORRY</span>
       </p>
       <blockquote class="hero-quote">
         <span class="pro-text">"In a world full of good boys, be a great one."</span>
         <span class="chaos-text">"WARNING: May cause uncontrollable snorting"</span>
+        <span class="turbo-text">"I AM THE STORM THAT IS APPROACHING" — Leo, while farting on the couch</span>
       </blockquote>
     </div>
   </section>
@@ -53,6 +59,7 @@
       <h2 class="section-heading">
         <span class="pro-text">Portfolio</span>
         <span class="chaos-text">The Evidence</span>
+        <span class="turbo-text">EXHIBIT A THROUGH Z OF CRIMINAL CUTENESS</span>
       </h2>
       <div id="gallery-grid"></div>
     </div>
@@ -64,14 +71,17 @@
       <h2 class="section-heading">
         <span class="pro-text">Community Showcase</span>
         <span class="chaos-text">Show Us YOUR Pet!</span>
+        <span class="turbo-text">DEPLOY YOUR CREATURE INTO THE ARENA</span>
       </h2>
       <p class="section-subtitle">
         <span class="pro-text">A curated collection of distinguished companions from our community.</span>
         <span class="chaos-text">Your pet deserves FAME. Do it. Do it now.</span>
+        <span class="turbo-text">EVERY PET IS A LEGEND. EVERY SNOOT MUST BE BOOPED. THIS IS NOT A REQUEST.</span>
       </p>
       <button id="add-pet-btn" class="btn-primary">
         <span class="pro-text">Add Your Pet</span>
         <span class="chaos-text">ADD YOUR PET!!!</span>
+        <span class="turbo-text">YEET YOUR PET INTO THE VOID</span>
       </button>
       <div id="pet-wall-grid"></div>
     </div>
@@ -82,6 +92,7 @@
     <p>
       <span class="pro-text">A tribute to Leo, created with love by Kaitlyn Rydzewski.</span>
       <span class="chaos-text">Made by Kaitlyn Rydzewski because Leo DEMANDED it. He will not stop staring until you scroll back up.</span>
+      <span class="turbo-text">KAITLYN RYDZEWSKI WAS FORCED TO BUILD THIS AT SNORTPOINT. LEO IS WATCHING. LEO IS ALWAYS WATCHING. SCROLL BACK UP AND LOOK AT HIM AGAIN.</span>
     </p>
   </footer>
 
@@ -92,6 +103,7 @@
       <h2 id="modal-title">
         <span class="pro-text">Add Your Pet</span>
         <span class="chaos-text">SUBMIT YOUR CREATURE</span>
+        <span class="turbo-text">SACRIFICE YOUR PET TO THE ALGORITHM</span>
       </h2>
       <form id="upload-form" novalidate>
         <div class="form-group">
