@@ -1558,6 +1558,55 @@ body {
   box-shadow: 8px 8px 0 #00e5ff, 16px 16px 0 #ffe600;
 }
 
+/* ── Lightbox Arrows ─────────────────────────────────────── */
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3002;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.2);
+  font-size: 3rem;
+  line-height: 1;
+  width: 56px;
+  height: 80px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.lightbox-arrow:hover {
+  background: rgba(255,255,255,0.25);
+  transform: translateY(-50%) scale(1.1);
+}
+.lightbox-prev { left: 16px; }
+.lightbox-next { right: 16px; }
+
+[data-mode="turbo"] .lightbox-arrow {
+  background: rgba(255,0,255,0.3);
+  border-color: #ff00ff;
+  color: #00ffff;
+}
+[data-mode="turbo"] .lightbox-arrow:hover {
+  background: rgba(255,0,255,0.6);
+  box-shadow: 0 0 20px #ff00ff;
+}
+
+@media (max-width: 768px) {
+  .lightbox-arrow {
+    width: 40px;
+    height: 56px;
+    font-size: 2rem;
+  }
+  .lightbox-prev { left: 4px; }
+  .lightbox-next { right: 4px; }
+}
+
 /* HTML: .modal-close used for lightbox close button too */
 .lightbox-inner .modal-close,
 .lightbox-close {

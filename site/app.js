@@ -204,10 +204,14 @@
 
   // ─── Lightbox ──────────────────────────────────────────────────────────────
 
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  const lightboxCaption = document.getElementById('lightbox-caption');
-  const lightboxCloseBtn = document.getElementById('lightbox-close-btn');
+  var lightbox = document.getElementById('lightbox');
+  var lightboxImg = document.getElementById('lightbox-img');
+  var lightboxCaption = document.getElementById('lightbox-caption');
+  var lightboxCloseBtn = document.getElementById('lightbox-close-btn');
+  var lightboxPrev = document.getElementById('lightbox-prev');
+  var lightboxNext = document.getElementById('lightbox-next');
+  var currentPhotoIndex = -1;
+  var lightboxSource = null; // 'gallery' or 'petwall'
 
   function openLightbox(src, caption) {
     lightboxImg.src = src;
@@ -215,6 +219,19 @@
     lightbox.classList.add('active');
     lightbox.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+    // Show/hide arrows based on source
+    var showArrows = lightboxSource === 'gallery' && currentPhotoIndex >= 0;
+    lightboxPrev.style.display = showArrows ? '' : 'none';
+    lightboxNext.style.display = showArrows ? '' : 'none';
+  }
+
+  function showPhotoAtIndex(index) {
+    if (index < 0) index = LEO_PHOTOS.length - 1;
+    if (index >= LEO_PHOTOS.length) index = 0;
+    currentPhotoIndex = index;
+    var photo = LEO_PHOTOS[index];
+    lightboxImg.src = getPhotoUrl(photo.file);
+    lightboxCaption.textContent = getCaption(photo);
   }
 
   function closeLightbox() {
@@ -223,27 +240,39 @@
     lightboxImg.src = '';
     lightboxCaption.textContent = '';
     document.body.style.overflow = '';
+    currentPhotoIndex = -1;
+    lightboxSource = null;
   }
 
   // Close button
   lightboxCloseBtn.addEventListener('click', closeLightbox);
 
-  // Click on overlay background (not the inner content)
+  // Arrow buttons
+  lightboxPrev.addEventListener('click', function (e) {
+    e.stopPropagation();
+    showPhotoAtIndex(currentPhotoIndex - 1);
+  });
+  lightboxNext.addEventListener('click', function (e) {
+    e.stopPropagation();
+    showPhotoAtIndex(currentPhotoIndex + 1);
+  });
+
+  // Click on overlay background (not the inner content or arrows)
   lightbox.addEventListener('click', function (e) {
     if (e.target === lightbox) {
       closeLightbox();
     }
   });
 
-  // Escape key
+  // Keyboard: Escape, left arrow, right arrow
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') {
-      if (lightbox.classList.contains('active')) {
-        closeLightbox();
-      }
-      if (uploadModal.classList.contains('active')) {
-        closeModal();
-      }
+    if (lightbox.classList.contains('active')) {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft' && currentPhotoIndex >= 0) showPhotoAtIndex(currentPhotoIndex - 1);
+      if (e.key === 'ArrowRight' && currentPhotoIndex >= 0) showPhotoAtIndex(currentPhotoIndex + 1);
+    }
+    if (e.key === 'Escape' && uploadModal.classList.contains('active')) {
+      closeModal();
     }
   });
 
@@ -254,6 +283,8 @@
     var img = item.querySelector('img');
     var index = parseInt(item.dataset.photoIndex, 10);
     if (img && !isNaN(index)) {
+      lightboxSource = 'gallery';
+      currentPhotoIndex = index;
       openLightbox(img.src, getCaption(LEO_PHOTOS[index]));
     }
   });
@@ -315,11 +346,13 @@
 
   // Pet wall click delegation
   document.getElementById('pet-wall-grid').addEventListener('click', function (e) {
-    const card = e.target.closest('.pet-card');
+    var card = e.target.closest('.pet-card');
     if (!card) return;
-    const img = card.querySelector('img');
-    const nameEl = card.querySelector('.pet-card-name');
+    var img = card.querySelector('img');
+    var nameEl = card.querySelector('.pet-card-name');
     if (img) {
+      lightboxSource = 'petwall';
+      currentPhotoIndex = -1;
       openLightbox(img.src, nameEl ? nameEl.textContent : '');
     }
   });
