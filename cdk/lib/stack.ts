@@ -79,6 +79,7 @@ export class EveryoneLovesLeoStack extends cdk.Stack {
       destinationBucket: bucket,
       distribution: distribution,
       distributionPaths: ['/*'],
+      prune: false,
     });
 
     new s3deploy.BucketDeployment(this, 'DeployLeoPhotos', {
