@@ -100,6 +100,28 @@ body {
 [data-mode="unhinged"]     .pro-text   { display: none; }
 
 /* ── Nav Bar ──────────────────────────────────────────────── */
+/* HTML: <nav id="main-nav"> — no wrapper class, nav itself is the bar */
+#main-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--nav-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--card-border);
+  transition: background 0.3s ease, border-color 0.3s ease;
+  max-width: 100%;
+  padding: 0 24px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* Keep .nav and .nav-inner as aliases in case used elsewhere */
 .nav {
   position: fixed;
   top: 0;
@@ -179,6 +201,8 @@ body {
   transform: scale(1.15) rotate(-3deg);
 }
 
+/* HTML: .personality-toggle wrapper, .toggle-label spans */
+.personality-toggle,
 .nav-toggle {
   flex-shrink: 0;
   display: flex;
@@ -186,6 +210,7 @@ body {
   gap: 10px;
 }
 
+.toggle-label,
 .nav-toggle-label {
   font-size: 0.75rem;
   color: var(--text-muted);
@@ -193,6 +218,7 @@ body {
   transition: color 0.3s ease;
 }
 
+[data-mode="unhinged"] .toggle-label,
 [data-mode="unhinged"] .nav-toggle-label {
   color: #ffe600;
   font-weight: 900;
@@ -200,6 +226,7 @@ body {
 }
 
 /* ── Toggle Switch ────────────────────────────────────────── */
+/* .theme-toggle-wrapper is CSS alias — HTML uses .personality-toggle */
 .theme-toggle-wrapper {
   display: flex;
   align-items: center;
@@ -270,6 +297,8 @@ body {
 }
 
 /* ── Hero Section ─────────────────────────────────────────── */
+/* HTML: <section id="hero"> — target by ID */
+#hero,
 .hero {
   min-height: 100vh;
   display: flex;
@@ -282,10 +311,12 @@ body {
   overflow: hidden;
 }
 
+[data-mode="professional"] #hero,
 [data-mode="professional"] .hero {
   background: linear-gradient(160deg, #1a1f3d 0%, #242952 50%, #1a2040 100%);
 }
 
+[data-mode="unhinged"] #hero,
 [data-mode="unhinged"] .hero {
   background: linear-gradient(135deg, #ffe600 0%, #ff1493 50%, #00e5ff 100%);
   background-size: 400% 400%;
@@ -326,7 +357,9 @@ body {
   50%       { transform: translateY(-6px); }
 }
 
-.hero h1 {
+/* HTML: <h1 class="hero-heading"> */
+.hero h1,
+.hero-heading {
   font-family: var(--heading-font);
   font-size: clamp(3rem, 8vw, 7rem);
   line-height: 1.05;
@@ -334,13 +367,15 @@ body {
   transition: color 0.3s ease, font-family 0.3s ease;
 }
 
-[data-mode="professional"] .hero h1 {
+[data-mode="professional"] .hero h1,
+[data-mode="professional"] .hero-heading {
   color: #e8e0d0;
   font-weight: 400;
   letter-spacing: -0.02em;
 }
 
-[data-mode="unhinged"] .hero h1 {
+[data-mode="unhinged"] .hero h1,
+[data-mode="unhinged"] .hero-heading {
   color: #1a1a1a;
   font-weight: 900;
   text-shadow: 4px 4px 0 #ff1493, 8px 8px 0 #00e5ff;
@@ -484,10 +519,23 @@ body {
 }
 
 /* ── Sections ─────────────────────────────────────────────── */
+/* HTML: <section id="gallery">, <section id="pet-wall"> with .section-inner inside */
+#gallery,
+#pet-wall,
 .section {
   padding: 96px 24px;
+}
+
+/* HTML: .section-inner is the max-width centering wrapper */
+.section-inner,
+.section-header {
   max-width: 1200px;
   margin: 0 auto;
+}
+
+/* Section heading alignment / spacing */
+.section-inner {
+  text-align: center;
 }
 
 .section-header {
@@ -495,6 +543,8 @@ body {
   margin-bottom: 64px;
 }
 
+/* HTML: <h2 class="section-heading"> */
+.section-heading,
 .section-header h2 {
   font-family: var(--heading-font);
   font-size: clamp(2rem, 4vw, 3.2rem);
@@ -502,11 +552,13 @@ body {
   transition: color 0.3s ease;
 }
 
+[data-mode="professional"] .section-heading,
 [data-mode="professional"] .section-header h2 {
   color: #e8e0d0;
   font-weight: 400;
 }
 
+[data-mode="unhinged"] .section-heading,
 [data-mode="unhinged"] .section-header h2 {
   color: #1a1a1a;
   font-weight: 900;
@@ -515,14 +567,17 @@ body {
   display: inline-block;
 }
 
+/* HTML: <p class="section-subtitle"> */
+.section-subtitle,
 .section-header p {
   color: var(--text-muted);
   font-size: 1.1rem;
   max-width: 560px;
-  margin: 0 auto;
+  margin: 0 auto 32px;
   transition: color 0.3s ease;
 }
 
+[data-mode="unhinged"] .section-subtitle,
 [data-mode="unhinged"] .section-header p {
   color: #555;
   font-weight: 700;
@@ -713,6 +768,8 @@ body {
 }
 
 /* ── "Add Your Pet" Button ───────────────────────────────── */
+/* HTML: <button id="add-pet-btn" class="btn-primary"> */
+#add-pet-btn,
 .add-pet-btn {
   display: inline-flex;
   align-items: center;
@@ -727,20 +784,24 @@ body {
   transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
   border: none;
   cursor: pointer;
+  margin-bottom: 40px;
 }
 
+[data-mode="professional"] #add-pet-btn,
 [data-mode="professional"] .add-pet-btn {
   background: var(--accent);
   color: #1a1f3d;
   letter-spacing: 0.04em;
 }
 
+[data-mode="professional"] #add-pet-btn:hover,
 [data-mode="professional"] .add-pet-btn:hover {
   background: var(--accent-secondary);
   transform: translateY(-3px);
   box-shadow: 0 10px 28px rgba(212, 168, 83, 0.4);
 }
 
+[data-mode="unhinged"] #add-pet-btn,
 [data-mode="unhinged"] .add-pet-btn {
   background: #ff1493;
   color: #ffe600;
@@ -757,6 +818,7 @@ body {
   50%       { transform: scale(1.04) rotate(-1deg); }
 }
 
+[data-mode="unhinged"] #add-pet-btn:hover,
 [data-mode="unhinged"] .add-pet-btn:hover {
   background: #00e5ff;
   color: #1a1a1a;
@@ -786,6 +848,8 @@ body {
   pointer-events: all;
 }
 
+/* HTML: <div class="modal-box"> inside .modal-overlay */
+.modal-box,
 .modal {
   background: var(--card-bg);
   border-radius: var(--radius);
@@ -799,10 +863,12 @@ body {
   transition: transform 0.3s ease, background 0.3s ease;
 }
 
+.modal-overlay.active .modal-box,
 .modal-overlay.active .modal {
   transform: translateY(0) scale(1);
 }
 
+[data-mode="unhinged"] .modal-box,
 [data-mode="unhinged"] .modal {
   background: #ffe600;
   border: 4px solid #ff1493;
@@ -810,6 +876,7 @@ body {
   transform: rotate(-1deg) translateY(16px);
 }
 
+[data-mode="unhinged"] .modal-overlay.active .modal-box,
 [data-mode="unhinged"] .modal-overlay.active .modal {
   transform: rotate(-1deg) translateY(0) scale(1);
 }
@@ -848,6 +915,9 @@ body {
   transform: rotate(90deg);
 }
 
+/* HTML: <h2 id="modal-title"> inside .modal-box */
+.modal-box h2,
+.modal-box h3,
 .modal h3 {
   font-family: var(--heading-font);
   font-size: 1.6rem;
@@ -856,6 +926,8 @@ body {
   transition: color 0.3s ease;
 }
 
+[data-mode="unhinged"] .modal-box h2,
+[data-mode="unhinged"] .modal-box h3,
 [data-mode="unhinged"] .modal h3 {
   color: #1a1a1a;
   text-shadow: 2px 2px 0 #ff1493;
@@ -879,6 +951,8 @@ body {
   margin-bottom: 20px;
 }
 
+/* HTML: bare <label> and <input> inside .form-group */
+.form-group label,
 .form-label {
   display: block;
   font-size: 0.85rem;
@@ -890,16 +964,23 @@ body {
   text-transform: uppercase;
 }
 
+[data-mode="professional"] .form-group label,
 [data-mode="professional"] .form-label {
   color: var(--text-muted);
 }
 
+[data-mode="unhinged"] .form-group label,
 [data-mode="unhinged"] .form-label {
   color: #1a1a1a;
   font-weight: 900;
   font-family: var(--heading-font);
 }
 
+/* HTML: bare <input type="text">, <input type="file"> inside .form-group */
+.form-group input[type="text"],
+.form-group input[type="file"],
+.form-group select,
+.form-group textarea,
 .form-input,
 .form-textarea,
 .form-select {
@@ -916,12 +997,20 @@ body {
   appearance: none;
 }
 
+[data-mode="professional"] .form-group input[type="text"],
+[data-mode="professional"] .form-group input[type="file"],
+[data-mode="professional"] .form-group select,
+[data-mode="professional"] .form-group textarea,
 [data-mode="professional"] .form-input,
 [data-mode="professional"] .form-textarea,
 [data-mode="professional"] .form-select {
   color: #e8e0d0;
 }
 
+[data-mode="unhinged"] .form-group input[type="text"],
+[data-mode="unhinged"] .form-group input[type="file"],
+[data-mode="unhinged"] .form-group select,
+[data-mode="unhinged"] .form-group textarea,
 [data-mode="unhinged"] .form-input,
 [data-mode="unhinged"] .form-textarea,
 [data-mode="unhinged"] .form-select {
@@ -932,6 +1021,9 @@ body {
   font-weight: 700;
 }
 
+.form-group input[type="text"]:focus,
+.form-group select:focus,
+.form-group textarea:focus,
 .form-input:focus,
 .form-textarea:focus,
 .form-select:focus {
@@ -939,6 +1031,9 @@ body {
   box-shadow: 0 0 0 3px rgba(212, 168, 83, 0.15);
 }
 
+[data-mode="unhinged"] .form-group input[type="text"]:focus,
+[data-mode="unhinged"] .form-group select:focus,
+[data-mode="unhinged"] .form-group textarea:focus,
 [data-mode="unhinged"] .form-input:focus,
 [data-mode="unhinged"] .form-textarea:focus,
 [data-mode="unhinged"] .form-select:focus {
@@ -1012,6 +1107,8 @@ body {
 }
 
 /* ── Submit Button ────────────────────────────────────────── */
+/* HTML: <button type="submit" class="btn-primary" id="upload-submit-btn"> */
+#upload-submit-btn,
 .submit-btn {
   width: 100%;
   padding: 14px 24px;
@@ -1025,13 +1122,16 @@ body {
   cursor: pointer;
   transition: background 0.3s ease, opacity 0.3s ease, transform 0.2s ease;
   letter-spacing: 0.04em;
+  margin-top: 8px;
 }
 
+[data-mode="professional"] #upload-submit-btn:hover:not(:disabled),
 [data-mode="professional"] .submit-btn:hover:not(:disabled) {
   background: var(--accent-secondary);
   transform: translateY(-2px);
 }
 
+[data-mode="unhinged"] #upload-submit-btn,
 [data-mode="unhinged"] .submit-btn {
   background: #ff1493;
   color: #ffe600;
@@ -1042,6 +1142,7 @@ body {
   font-size: 1.1rem;
 }
 
+[data-mode="unhinged"] #upload-submit-btn:hover:not(:disabled),
 [data-mode="unhinged"] .submit-btn:hover:not(:disabled) {
   background: #00e5ff;
   color: #1a1a1a;
@@ -1049,6 +1150,7 @@ body {
   box-shadow: 6px 6px 0 #1a1a1a;
 }
 
+#upload-submit-btn:disabled,
 .submit-btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
@@ -1056,6 +1158,8 @@ body {
 }
 
 /* ── Upload Status ────────────────────────────────────────── */
+/* HTML: <p id="upload-status"> */
+#upload-status,
 .upload-status {
   text-align: center;
   font-size: 0.875rem;
@@ -1065,30 +1169,43 @@ body {
   color: var(--text-muted);
 }
 
+#upload-status.success,
 .upload-status.success {
   color: #4caf76;
   font-weight: 600;
 }
 
+#upload-status.error,
 .upload-status.error {
   color: #e05252;
   font-weight: 600;
 }
 
+[data-mode="unhinged"] #upload-status,
 [data-mode="unhinged"] .upload-status {
   font-weight: 700;
   color: #333;
 }
 
+[data-mode="unhinged"] #upload-status.success,
 [data-mode="unhinged"] .upload-status.success {
   color: #00a86b;
 }
 
+[data-mode="unhinged"] #upload-status.error,
 [data-mode="unhinged"] .upload-status.error {
   color: #ff1493;
 }
 
 /* ── Lightbox ─────────────────────────────────────────────── */
+/* HTML: <div id="lightbox" class="modal-overlay"> — uses modal-overlay for backdrop */
+/* The lightbox backdrop is handled by .modal-overlay; lightbox-specific overrides: */
+#lightbox.modal-overlay {
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(8px);
+}
+
+/* Keep .lightbox as alias */
 .lightbox {
   position: fixed;
   inset: 0;
@@ -1109,6 +1226,8 @@ body {
   pointer-events: all;
 }
 
+/* HTML: <div class="lightbox-inner"> */
+.lightbox-inner,
 .lightbox-content {
   position: relative;
   max-width: 90vw;
@@ -1119,6 +1238,7 @@ body {
   gap: 16px;
 }
 
+.lightbox-inner img,
 .lightbox-content img {
   max-width: 90vw;
   max-height: 80vh;
@@ -1128,15 +1248,19 @@ body {
   transition: transform 0.3s ease;
 }
 
+[data-mode="professional"] .lightbox-inner img,
 [data-mode="professional"] .lightbox-content img {
   box-shadow: 0 20px 60px rgba(0,0,0,0.7);
 }
 
+[data-mode="unhinged"] .lightbox-inner img,
 [data-mode="unhinged"] .lightbox-content img {
   border: 5px solid #ff1493;
   box-shadow: 8px 8px 0 #00e5ff, 16px 16px 0 #ffe600;
 }
 
+/* HTML: .modal-close used for lightbox close button too */
+.lightbox-inner .modal-close,
 .lightbox-close {
   position: absolute;
   top: -48px;
@@ -1156,21 +1280,26 @@ body {
   font-family: var(--body-font);
 }
 
+.lightbox-inner .modal-close:hover,
 .lightbox-close:hover {
   background: rgba(255,255,255,0.25);
   transform: scale(1.1);
 }
 
+[data-mode="unhinged"] .lightbox-inner .modal-close,
 [data-mode="unhinged"] .lightbox-close {
   background: #ff1493;
   border: 2px solid #ffe600;
 }
 
+[data-mode="unhinged"] .lightbox-inner .modal-close:hover,
 [data-mode="unhinged"] .lightbox-close:hover {
   background: #00e5ff;
   transform: rotate(90deg) scale(1.1);
 }
 
+/* HTML: <p id="lightbox-caption"> */
+#lightbox-caption,
 .lightbox-caption {
   color: rgba(255,255,255,0.85);
   font-size: 0.95rem;
@@ -1179,6 +1308,7 @@ body {
   font-family: var(--heading-font);
 }
 
+[data-mode="unhinged"] #lightbox-caption,
 [data-mode="unhinged"] .lightbox-caption {
   color: #ffe600;
   font-weight: 900;
@@ -1222,6 +1352,8 @@ body {
 }
 
 /* ── Footer ───────────────────────────────────────────────── */
+/* HTML: <footer id="site-footer"> */
+#site-footer,
 .footer {
   text-align: center;
   padding: 48px 24px;
@@ -1231,6 +1363,7 @@ body {
   transition: border-color 0.3s ease, color 0.3s ease;
 }
 
+[data-mode="unhinged"] #site-footer,
 [data-mode="unhinged"] .footer {
   border-top: 3px solid #ff1493;
   color: #555;
@@ -1240,15 +1373,18 @@ body {
   background-clip: text;
 }
 
+#site-footer a,
 .footer a {
   color: var(--accent);
   transition: color 0.2s ease;
 }
 
+#site-footer a:hover,
 .footer a:hover {
   color: var(--accent-secondary);
 }
 
+[data-mode="unhinged"] #site-footer a,
 [data-mode="unhinged"] .footer a {
   color: #ff1493;
 }
@@ -1495,15 +1631,24 @@ body {
 
 /* ── Transitions for theme swap ──────────────────────────── */
 body,
+#main-nav,
 .nav,
+#hero,
 .hero,
+#gallery,
+#pet-wall,
 .section,
+.section-inner,
 .gallery-item,
 .pet-card,
+.modal-box,
 .modal,
 .modal-overlay,
+#site-footer,
 .footer,
 .btn,
+.btn-primary,
+#add-pet-btn,
 .add-pet-btn,
 .stat-card,
 .about-image,
@@ -1536,7 +1681,8 @@ p, a, span {
 
 /* ── Responsive: Mobile (≤768px) ─────────────────────────── */
 @media (max-width: 768px) {
-  /* Stack nav vertically */
+  /* Stack nav vertically — target #main-nav directly */
+  #main-nav,
   .nav-inner {
     flex-wrap: wrap;
     height: auto;
@@ -1560,14 +1706,18 @@ p, a, span {
     font-size: 0.8rem;
   }
 
+  .personality-toggle,
   .nav-toggle {
     margin-left: auto;
   }
 
+  #hero,
   .hero {
     padding: 100px 20px 64px;
   }
 
+  #gallery,
+  #pet-wall,
   .section {
     padding: 64px 20px;
   }
@@ -1587,6 +1737,7 @@ p, a, span {
     align-items: center;
   }
 
+  .modal-box,
   .modal {
     padding: 28px 20px;
   }
@@ -1595,6 +1746,7 @@ p, a, span {
     display: none;
   }
 
+  .lightbox-inner img,
   .lightbox-content img {
     max-height: 70vh;
   }
