@@ -1,12 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-mode="professional">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Everyone Loves Leo</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Everyone Loves Leo</h1>
-  <p>Coming soon...</p>
+
+  <!-- Fixed Navigation Bar -->
+  <nav id="main-nav">
+    <div class="nav-logo">
+      <span class="pro-text">LEO</span>
+      <span class="chaos-text">LEO!!!</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#pet-wall">Pet Wall</a></li>
+    </ul>
+    <div class="personality-toggle">
+      <span class="toggle-label pro-text">Professional</span>
+      <span class="toggle-label chaos-text">Unhinged</span>
+      <label class="toggle-switch" aria-label="Toggle personality mode">
+        <input type="checkbox" id="mode-toggle">
+        <span class="toggle-slider"></span>
+      </label>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="hero-content">
+      <h1 class="hero-heading">
+        <span class="pro-text">Leo</span>
+        <span class="chaos-text">LEO THE MAGNIFICENT</span>
+      </h1>
+      <p class="hero-tagline">
+        <span class="pro-text">French Bulldog | Fashion Icon | Distinguished Gentleman</span>
+        <span class="chaos-text">17 lbs of DRAMA | Ears That Pick Up Satellite TV | A Face Only an Uncle Could Love (and he does)</span>
+      </p>
+      <blockquote class="hero-quote">
+        <span class="pro-text">"In a world full of good boys, be a great one."</span>
+        <span class="chaos-text">"WARNING: May cause uncontrollable snorting"</span>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery">
+    <div class="section-inner">
+      <h2 class="section-heading">
+        <span class="pro-text">Portfolio</span>
+        <span class="chaos-text">The Evidence</span>
+      </h2>
+      <div id="gallery-grid"></div>
+    </div>
+  </section>
+
+  <!-- Pet Wall Section -->
+  <section id="pet-wall">
+    <div class="section-inner">
+      <h2 class="section-heading">
+        <span class="pro-text">Community Showcase</span>
+        <span class="chaos-text">Show Us YOUR Pet!</span>
+      </h2>
+      <p class="section-subtitle">
+        <span class="pro-text">A curated collection of distinguished companions from our community.</span>
+        <span class="chaos-text">Your pet deserves FAME. Do it. Do it now.</span>
+      </p>
+      <button id="add-pet-btn" class="btn-primary">
+        <span class="pro-text">Add Your Pet</span>
+        <span class="chaos-text">ADD YOUR PET!!!</span>
+      </button>
+      <div id="pet-wall-grid"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="site-footer">
+    <p>
+      <span class="pro-text">A tribute to Leo, created with love by Kaitlyn Rydzewski.</span>
+      <span class="chaos-text">Made by Kaitlyn Rydzewski because Leo DEMANDED it. He will not stop staring until you scroll back up.</span>
+    </p>
+  </footer>
+
+  <!-- Upload Modal -->
+  <div id="upload-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-box">
+      <button class="modal-close" id="modal-close-btn" aria-label="Close modal">&times;</button>
+      <h2 id="modal-title">
+        <span class="pro-text">Add Your Pet</span>
+        <span class="chaos-text">SUBMIT YOUR CREATURE</span>
+      </h2>
+      <form id="upload-form" novalidate>
+        <div class="form-group">
+          <label for="pet-name-input">
+            <span class="pro-text">Pet Name</span>
+            <span class="chaos-text">What Do You Call This Little Gremlin?</span>
+          </label>
+          <input type="text" id="pet-name-input" name="petName" placeholder="e.g., Biscuit" required>
+        </div>
+        <div class="form-group">
+          <label for="pet-file-input">
+            <span class="pro-text">Photo</span>
+            <span class="chaos-text">Show Us The Chaos</span>
+          </label>
+          <input type="file" id="pet-file-input" name="petPhoto" accept="image/*" required>
+        </div>
+        <div id="preview-container" aria-live="polite">
+          <!-- Image preview injected here by JS -->
+        </div>
+        <button type="submit" class="btn-primary" id="upload-submit-btn">
+          <span class="pro-text">Submit</span>
+          <span class="chaos-text">UNLEASH IT</span>
+        </button>
+        <p id="upload-status" aria-live="assertive"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <div class="lightbox-inner">
+      <button class="modal-close" id="lightbox-close-btn" aria-label="Close lightbox">&times;</button>
+      <img id="lightbox-img" src="" alt="">
+      <p id="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
