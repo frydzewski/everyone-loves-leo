@@ -3,8 +3,8 @@
 
   // ─── Config ────────────────────────────────────────────────────────────────
 
-  const API_URL = ''; // Set after CDK deploy
-  const CDN_BASE = ''; // Set after CDK deploy
+  const API_URL = 'https://ry8f7fo7d5.execute-api.us-east-1.amazonaws.com/prod/';
+  const CDN_BASE = 'https://d4cc9faf2xny6.cloudfront.net';
 
   const LEO_PHOTOS = [
     'IMG_1066.jpeg', 'IMG_1255.jpeg', 'IMG_1260.jpeg', 'IMG_1547.jpeg',
@@ -23,11 +23,11 @@
   function setMode(mode) {
     htmlEl.setAttribute('data-mode', mode);
     localStorage.setItem('leo-mode', mode);
-    modeToggle.checked = (mode === 'chaos');
+    modeToggle.checked = (mode === 'unhinged');
   }
 
   modeToggle.addEventListener('change', function () {
-    setMode(this.checked ? 'chaos' : 'professional');
+    setMode(this.checked ? 'unhinged' : 'professional');
   });
 
   // Restore saved mode on load (default: 'professional')
@@ -136,7 +136,8 @@
       card.className = 'pet-card';
 
       const img = document.createElement('img');
-      img.src = pet.url || '';
+      const photoUrl = CDN_BASE ? CDN_BASE + '/' + pet.photoKey : pet.photoKey;
+      img.src = photoUrl;
       img.alt = pet.name || 'Community pet';
       img.loading = 'lazy';
 
@@ -152,8 +153,8 @@
 
   function loadPetWall() {
     const manifestUrl = CDN_BASE
-      ? CDN_BASE + '/pets/manifest.json'
-      : 'pets/manifest.json';
+      ? CDN_BASE + '/community/manifest.json'
+      : 'community/manifest.json';
 
     fetch(manifestUrl)
       .then(function (res) {
@@ -238,13 +239,74 @@
     reader.readAsDataURL(file);
   });
 
-  // ─── Globals for Task 8 ────────────────────────────────────────────────────
+  // ─── Image Resize ──────────────────────────────────────────────────────────
 
-  window._leo = {
-    API_URL: API_URL,
-    CDN_BASE: CDN_BASE,
-    loadPetWall: loadPetWall,
-    openLightbox: openLightbox
-  };
+  function resizeImage(file, maxWidth) {
+    return new Promise(function (resolve) {
+      var img = new Image();
+      var canvas = document.createElement('canvas');
+      img.onload = function () {
+        var scale = Math.min(1, maxWidth / img.width);
+        canvas.width = img.width * scale;
+        canvas.height = img.height * scale;
+        canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
+        canvas.toBlob(function (blob) { resolve(blob); }, file.type, 0.85);
+      };
+      img.src = URL.createObjectURL(file);
+    });
+  }
+
+  // ─── Upload Form ──────────────────────────────────────────────────────────
+
+  var uploadForm = document.getElementById('upload-form');
+  var uploadStatus = document.getElementById('upload-status');
+  var submitBtn = document.getElementById('upload-submit-btn');
+
+  uploadForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var petName = document.getElementById('pet-name-input').value.trim();
+    var file = petFileInput.files[0];
+
+    if (!petName || !file) return;
+    if (file.size > 5 * 1024 * 1024) {
+      uploadStatus.textContent = 'Photo must be under 5MB.';
+      return;
+    }
+
+    submitBtn.disabled = true;
+    uploadStatus.textContent = 'Uploading...';
+
+    resizeImage(file, 1200).then(function (resizedBlob) {
+      return fetch(API_URL + 'upload', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: petName, contentType: file.type }),
+      })
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (data.error) throw new Error(data.error);
+          return fetch(data.uploadUrl, {
+            method: 'PUT',
+            headers: { 'Content-Type': file.type },
+            body: resizedBlob,
+          }).then(function () { return data; });
+        });
+    }).then(function () {
+      uploadStatus.textContent = 'Done!';
+      uploadForm.reset();
+      previewContainer.innerHTML = '';
+      previewContainer.style.display = 'none';
+      setTimeout(function () {
+        closeModal();
+        uploadStatus.textContent = '';
+        submitBtn.disabled = false;
+        loadPetWall();
+      }, 1000);
+    }).catch(function (err) {
+      uploadStatus.textContent = 'Upload failed: ' + err.message;
+      submitBtn.disabled = false;
+    });
+  });
 
 }());

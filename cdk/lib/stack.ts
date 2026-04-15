@@ -73,7 +73,9 @@ export class EveryoneLovesLeoStack extends cdk.Stack {
     upload.addMethod('POST', new apigateway.LambdaIntegration(uploadFn));
 
     new s3deploy.BucketDeployment(this, 'DeploySite', {
-      sources: [s3deploy.Source.asset(path.join(__dirname, '../../site'))],
+      sources: [s3deploy.Source.asset(path.join(__dirname, '../../site'), {
+        exclude: ['leo', 'leo/*'],
+      })],
       destinationBucket: bucket,
       distribution: distribution,
       distributionPaths: ['/*'],
